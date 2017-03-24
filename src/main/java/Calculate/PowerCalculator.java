@@ -3,9 +3,16 @@ package Calculate;
 /**
  * Created by Kelvin on 22-3-2017.
  */
-public class Calculate {
 
-    public static double CalculatePower(int speed) {
+public class PowerCalculator {
+
+    private int speed;
+
+    public PowerCalculator(int speed) {
+        this.speed = speed;
+    }
+
+    public double CalculatePower() {
 
         //windsnelheid => m/s = windsnelheid / 3,6
         //1m/s == 250 Kw

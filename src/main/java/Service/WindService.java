@@ -1,12 +1,13 @@
 /**
  * Created by Kelvin on 16-3-2017.
- */
-package PowerService;
+ **/
+
+package Service;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import Calculate.Calculate;
+import Calculate.PowerCalculator;
 import org.json.JSONObject;
 
 @Path("/bereken")
@@ -33,8 +34,10 @@ public class WindService {
                 return Response.status(200).entity(resp.toString()).build();
             }
 
+            PowerCalculator power = new PowerCalculator(speed);
+
             resp.put("Message", "De stroomopbrengst bedraagt");
-            resp.put("Kwh", Calculate.CalculatePower(speed));
+            resp.put("Kwh", power.CalculatePower());
 
             return Response.status(200).entity(resp.toString()).build();
 

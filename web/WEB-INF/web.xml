@@ -10,7 +10,7 @@
 
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>PowerService</param-value>
+            <param-value>Service</param-value>
         </init-param>
 
         <init-param>
